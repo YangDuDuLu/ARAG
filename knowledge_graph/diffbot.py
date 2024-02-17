@@ -1,5 +1,4 @@
 import diffbot
-import json
 
 diffbot_client = diffbot.Client(token='your_diffbot_api_token')
 
