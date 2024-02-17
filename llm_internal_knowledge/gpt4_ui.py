@@ -7,11 +7,11 @@ load_dotenv()
 
 client = OpenAI(
     # This is the default and can be omitted
-    api_key=os.getenv("GPT4_API_KEY"),
+    api_key=os.getenv("GPT4_TURBO_API_KEY"),
 )
 
 
-def generate_text_gpt4(prompt):
+def generate_text_gpt4_turbo(prompt):
     chat_completion = client.chat.completions.create(
         messages=[
             {
@@ -25,7 +25,7 @@ def generate_text_gpt4(prompt):
 
 
 iface = gr.Interface(
-    fn=generate_text_gpt4,
+    fn=generate_text_gpt4_turbo,
     inputs="textbox",  # Input is a textbox
     outputs="textbox",  # Output is a textbox
     title="GPT-4 Turbo Demo"
